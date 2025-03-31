@@ -1,0 +1,80 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de HTML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Editor de HTML</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="input-section-container" id="input-section-container">
+                <div class="file-input">
+                    <label for="html-file">Selecione um arquivo HTML:</label>
+                    <input type="file" id="html-file" accept=".html, .htm">
+                </div>
+                
+                <div class="divider">OU</div>
+                
+                <div class="html-input">
+                    <label for="html-input">Cole seu código HTML:</label>
+                    <textarea id="html-input" placeholder="Cole seu código HTML aqui..."></textarea>
+                    <button id="process-html" class="process-button">Processar HTML</button>
+                </div>
+                
+                <div class="input-section-drag-handle" id="input-section-drag-handle"></div>
+            </div>
+            
+            <div class="editor-container" id="editor-container">
+                <div class="preview-section">
+                    <h2>Visualização</h2>
+                    <div id="preview-area"></div>
+                </div>
+                
+                <div class="edit-section" id="edit-section">
+                    <h2>Elementos Editáveis</h2>
+                    <div id="editable-elements"></div>
+                </div>
+            </div>
+            
+            <div class="output-actions" id="output-actions">
+                <button id="copy-code" title="Copiar Código">
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                </button>
+                <button id="download-file" title="Baixar Arquivo">
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                </button>
+                <div class="notification" id="notification">Código copiado!</div>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-button" id="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </div>
+                <div class="search-box" id="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar elemento...">
+                </div>
+                <div class="search-results" id="search-results"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="config.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="element-handler.js"></script>
+    <script type="module" src="filter-utils.js"></script>
+    <script type="module" src="filter-handler.js"></script>
+    <script type="module" src="mobile-handler.js"></script>
+    <script type="module" src="copy-utils.js"></script>
+</body>
+</html>
